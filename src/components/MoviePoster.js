@@ -3,7 +3,7 @@ import React from "react";
 const MoviePoster = (props) =>{
     return(
         <div className="poster-container">
-           <img src={props.poster} className="w-100 poster-image"></img>
+           <img src={props.poster} className="w-100 poster-image"></img>   
         </div>
     );
 }

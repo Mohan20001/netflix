@@ -23,16 +23,20 @@
     position: relative;
     display: inline-block;
     width:20vw;
-    min-width: clamp(150px, 25vw, 290px);
+    min-width: clamp(110px, 14vw, 290px);
     min-height: 120px;
     margin-right:clamp(.01em, .4vw, .4em);
+    transition: all 0.1s ease-in-out;
 }
+
+
+
 .w-100{
     width:100%;
 }
 
 .poster-image{
-    aspect-ratio: 16/9;
+    aspect-ratio: 9/13;
     border-radius: 3px;
 }
 
@@ -43,9 +47,19 @@
     } */
     
     .poster-container{
-        min-width: clamp(150px, 70vw, 380px);
+        min-width: clamp(150px, 12vw, 380px);
         /* min-width: 120px;
         min-height: 220px; */
+    }
+
+}
+
+@media only screen and (min-width : 700px){
+
+    .poster-container:hover{
+        transform: scale(1.1);
+        z-index: 999;
+        box-shadow: 0px 0px 10px rgb(15, 15, 15);
     }
 
 }

@@ -1,24 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
+import Row from './components/Row';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    //  row componet
+    <>
+    <Row title="Trending Now"></Row>
+    <Row title="TV Shows Featuring a Strong Female Lead"></Row>
+    <Row title="Top 10 TV Shows"></Row>
+    <Row title="TV  Shows Featuring a Strong Female Lead"></Row>
+    <Row title="TV Shows Featuring a Strong Female Lead"></Row>
+    <Row title="TV Shows Featuring a Strong Female Lead"></Row>
+    </>
   );
 }
 

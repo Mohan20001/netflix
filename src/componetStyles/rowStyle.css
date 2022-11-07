@@ -1,0 +1,51 @@
+.row-container{
+    display: block;
+}
+
+.row{
+    margin-top: -5px;
+    display: flex;
+    overflow-x: scroll;
+    padding-inline:clamp(13px, 3.5vw, 4vw);
+}
+
+.row::-webkit-scrollbar{
+    display: none;
+}
+
+.row-title{
+    padding-inline:clamp(13px, 3.8vw, 4vw);
+    font-size: clamp(20px, 2vw, 22px);
+    font-weight: 400;
+}
+
+.poster-container{
+    position: relative;
+    display: inline-block;
+    width:20vw;
+    min-width: clamp(150px, 25vw, 290px);
+    min-height: 120px;
+    margin-right:clamp(.01em, .4vw, .4em);
+}
+.w-100{
+    width:100%;
+}
+
+.poster-image{
+    aspect-ratio: 16/9;
+    border-radius: 3px;
+}
+
+@media only screen and (max-width : 420px){
+
+    /* .poster-image{
+        aspect-ratio: 12/16;
+    } */
+    
+    .poster-container{
+        min-width: clamp(150px, 70vw, 380px);
+        /* min-width: 120px;
+        min-height: 220px; */
+    }
+
+}

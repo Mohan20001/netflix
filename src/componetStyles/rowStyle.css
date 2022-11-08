@@ -1,9 +1,11 @@
 .row-container{
     display: block;
+    background: transparent;
+    margin-top: 2rem;
 }
 
 .row{
-    margin-top: -5px;
+    margin-top: 10px;
     display: flex;
     overflow-x: scroll;
     padding-inline:clamp(13px, 3.5vw, 4vw);
@@ -47,7 +49,7 @@
     } */
     
     .poster-container{
-        min-width: clamp(150px, 12vw, 380px);
+        min-width: clamp(100px, 4vw, 380px);
         /* min-width: 120px;
         min-height: 220px; */
     }

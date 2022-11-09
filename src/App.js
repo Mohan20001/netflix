@@ -7,7 +7,7 @@ import Hero from './components/Hero';
 function App() {
 
 
-  const [_post, setPost] = useState([]);
+  let [_post, setPost] = useState([]);
 
   //random Movies/TV Shows
   const random_1 = 1 + Math.floor(Math.random() * 9);
@@ -30,36 +30,47 @@ function App() {
   // console.log(random_index);
 
   const get_Discover_post = () =>{
-        fetch('https://api.themoviedb.org/3/discover/movie?api_key=3a14c7390230b3a5a2dba32ee4278cb2&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate')
+        fetch(`https://api.themoviedb.org/3/discover/movie?api_key=3a14c7390230b3a5a2dba32ee4278cb2&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate`)
         .then(res => res.json())
-        .then(data =>{
-           setPost(data.results)
-           console.log(data.results);
+        .then(async data =>{
+           setPost(data.results[random_index])
+          //  console.log(data.results);
         });
   }
-  
-  //  useEffect(() => {
-  //   get_Discover_post();
-  //  },[])
 
-  // get_Discover_post();
+  useEffect(()=>{
+    get_Discover_post()
+  },[])
+    
+  // const bg_img = "https://image.tmdb.org/t/p/w1280" + _post.backdrop_path;
+  let bg_img = "https://image.tmdb.org/t/p/w1280";
 
-  return (
+  function set_width_img(){
+  if(window.innerWidth < 430){
+      bg_img = bg_img + _post.poster_path;
+  }else{
+      bg_img = bg_img + _post.backdrop_path;
+  }
+}
+
+set_width_img();
+
+return(
     //  row componet   
     // 3a14c7390230b3a5a2dba32ee4278cb2
     <>
-    <Hero onLoad={get_Discover_post()} />
-    <div className="Content-section" >
-    <Row title="Popular TV Shows" url={url_1}></Row>
-    <Row title="Trending Today" url={url_2}></Row>
-    <Row title="TV Airing Today" url={url_3}></Row>
-    <Row title="Trending of The Week" url={url_4}></Row>
-    <Row title="Popular Movies" url={url_5}></Row>
-    <Row title="Top Rated Movies" url={url_6}></Row>
-    <Row title="Upcoming Movies" url={url_7}></Row>
+    <Hero movie_overview={_post.overview} movie_title={_post.title} url_path={bg_img} />
+    <div className="Content-section">
+      <Row title="Popular TV Shows" url={url_1}></Row>
+      <Row title="Trending Today" url={url_2}></Row>
+      <Row title="TV Airing Today" url={url_3}></Row>
+      <Row title="Trending of The Week" url={url_4}></Row>
+      <Row title="Popular Movies" url={url_5}></Row>
+      <Row title="Top Rated Movies" url={url_6}></Row>
+      <Row title="Upcoming Movies" url={url_7}></Row>
     </div>
     </>
-  );
+)
 }
 
 export default App;

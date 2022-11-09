@@ -6,15 +6,16 @@ const Hero = (props)=> {
 
 
    let bg_style = {
-      // backgroundImage : `url(${props.url})`,
+      backgroundImage : `url(${props.url_path})`,
       backgroundSize : "100% auto"
    }
 
    return(
      <div className="Hero" style={bg_style}>
-        <h1 className="Movie-title">Movie Name part 2 avalable</h1>
-        <p className="Movie-description">Movie Description in some length of sentancesLorem ipsum is a dummy text without any sense. It is a sequence of Latin words that</p>
-        <div className="btn-container">
+      <div className="Hero-overlay"></div>
+        <h1 className="Movie-title mvt">{props.movie_title}</h1>
+        <p className="Movie-description mvd">{props.movie_overview}</p>
+        <div className="btn-container mvb">
          <button className="Play-btn">Play Now</button>
          <button className="Info-btn">More Info</button>
         </div>

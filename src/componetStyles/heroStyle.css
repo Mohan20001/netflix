@@ -5,16 +5,53 @@
 
 .Hero{
     /* height: clamp(600px, 80vh, 100vh); */
+    position: relative;
     padding-top: 2rem;
     padding-bottom: 2rem;
     padding-inline:clamp(13px, 3.5vw, 4vw);
     background-image: url('https://www.bing.com/th?id=OIP.Z3vgzz-9Nh8f9wo5mwm69AHaEo&w=316&h=197&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2');
+    background-repeat: no-repeat;
     background-size: 100% auto;
     background-color: none;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    aspect-ratio: 16/9;
+    aspect-ratio: 16/7;
+    background: rgba(0, 0, 0, 0.322);
+}
+
+.Hero::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: linear-gradient(rgba(0, 0, 0, 0.322), rgba(15, 15, 15, 0.007));
+}
+
+.Hero::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.322), rgba(15, 15, 15, 0.007));
+}
+
+.Hero-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.623), rgba(15, 15, 15, 0.007));
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+}
+
+.mvt, .mvd, .mvb{
+    z-index: 999;
 }
 
 .Movie-title{
@@ -29,7 +66,7 @@
 
 
 .Movie-description{
-    font-size: clamp(16px, 1.5vw, 24px);
+    font-size: clamp(18px, 1.5vw, 24px);
     margin-top: -20px;
     width: clamp(150px, 46vw, 48vw);
     /* line-height: 30px; */
@@ -55,10 +92,15 @@
 }
 
 
-@media only screen and (max-width:920px){
+@media only screen and (max-width:1024px){
     /* .Hero{
         height: clamp(400px, 40vh, 100vh);
     } */
+    .Hero{
+        background-size: 100% auto;
+        background-position: center;
+        
+    }
     .Movie-title{
         line-height: 42px;
     }
@@ -74,4 +116,21 @@
     .btn-container{
         margin-top: 1em;
     }
+}
+
+@media only screen and (max-width:430px){
+   .Hero{
+    aspect-ratio: 9/13;
+    background-repeat: no-repeat;
+   }
+
+   .Play-btn, .Info-btn{
+    padding: 8px 10px;
+   }
+
+   .Movie-title{
+    font-size: clamp(24px, 4vw, 30px);
+   }
+
+
 }

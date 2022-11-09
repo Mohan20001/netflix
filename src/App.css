@@ -7,11 +7,19 @@ body{
 }
 
 .Content-section{
-  margin-top: -140px;
+  margin-top: -100px;
   background-color: transparent;
 }
 
-@media only screen and (max-width: 620px){
+
+@media only screen and (max-width: 960px){
+  .Content-section{
+    margin-top: 1.6rem;
+  }
+}
+
+
+@media only screen and (max-width: 660px){
   .Content-section{
     margin-top: 0px;
   }

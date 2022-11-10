@@ -1,0 +1,38 @@
+.preview-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: transparent;
+    overflow: scroll;
+    z-index: 99999999;
+    /* display: none; */
+}
+
+.preview-container::-webkit-scrollbar{
+    display: none;
+}
+
+.pop-player{
+    height: 900px;
+    width: 64%;
+    margin-top: 30px;
+    z-index: 999999;
+    background: rgb(8, 8, 8);
+    margin-inline: auto;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgb(14, 13, 13);
+}
+
+.video-wrapper{
+    position: relative;
+    aspect-ratio: 16/9;
+}
+
+@media only screen and (max-width:680px) {
+    .pop-player{
+        top: 0;
+        width: 100vw;
+    }
+}

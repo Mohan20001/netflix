@@ -24,7 +24,7 @@ useEffect(()=>{
        <div className="row-container">
        <h2 className="row-title">{props.title}</h2>
        <div className="row">
-       {data.map(item => <MoviePoster poster={'https://image.tmdb.org/t/p/w500'+item.poster_path}/>)}
+       {data.map(item => <MoviePoster mt={item.title || item.original_title || item.name } poster={'https://image.tmdb.org/t/p/w500'+item.poster_path}/>)}
 
        </div>
        </div>

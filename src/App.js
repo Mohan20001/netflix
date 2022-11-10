@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 
 import Row from './components/Row';
 import Hero from './components/Hero';
+import Pop_player from './components/Pop_player';
 
 function App() {
 
@@ -58,7 +59,7 @@ set_width_img();
 return(
     //  row componet   
     // 3a14c7390230b3a5a2dba32ee4278cb2
-    <>
+    <div id='appId'>
     <Hero movie_overview={_post.overview} movie_title={_post.title} url_path={bg_img} />
     <div className="Content-section">
       <Row title="Popular TV Shows" url={url_1}></Row>
@@ -69,7 +70,8 @@ return(
       <Row title="Top Rated Movies" url={url_6}></Row>
       <Row title="Upcoming Movies" url={url_7}></Row>
     </div>
-    </>
+    <Pop_player />
+    </div>
 )
 }
 

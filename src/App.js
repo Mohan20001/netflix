@@ -34,10 +34,12 @@ function App() {
         fetch(`https://api.themoviedb.org/3/discover/movie?api_key=3a14c7390230b3a5a2dba32ee4278cb2&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate`)
         .then(res => res.json())
         .then(async data =>{
-           setPost(data.results[random_index])
-          //  console.log(data.results);
+           setPost(data.results[random_index]);
+           console.log(data.results);
         });
   }
+
+
 
   useEffect(()=>{
     get_Discover_post()
@@ -60,7 +62,7 @@ return(
     //  row componet   
     // 3a14c7390230b3a5a2dba32ee4278cb2
     <div id='appId'>
-    <Hero movie_overview={_post.overview} movie_title={_post.title} url_path={bg_img} />
+    <Hero movie_overview={_post.overview} movie_title={_post.title} url_path={bg_img} genre_arr={_post.genre_ids} />
     <div className="Content-section">
       <Row title="Popular TV Shows" url={url_1}></Row>
       <Row title="Trending Today" url={url_2}></Row>
@@ -70,7 +72,7 @@ return(
       <Row title="Top Rated Movies" url={url_6}></Row>
       <Row title="Upcoming Movies" url={url_7}></Row>
     </div>
-    <Pop_player />
+    {/* <Pop_player /> */}
     </div>
 )
 }

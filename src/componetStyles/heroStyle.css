@@ -91,6 +91,11 @@
     color:#fff
 }
 
+.genre-title{
+    z-index: 99999;
+    display: none;
+}
+
 
 @media only screen and (max-width:1024px){
     /* .Hero{
@@ -130,7 +135,20 @@
 
    .Movie-title{
     font-size: clamp(24px, 4vw, 30px);
+    display: none;
    }
 
+   .Movie-description{
+    display: none;
+   }
+
+   .Hero{
+    align-items: center;
+    justify-content: end;
+}
+
+.genre-title{
+    display: block;
+}
 
 }

@@ -35,7 +35,7 @@ function App() {
         .then(res => res.json())
         .then(async data =>{
            setPost(data.results[random_index]);
-           console.log(data.results);
+          //  console.log(data.results);
         });
   }
 

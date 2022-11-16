@@ -3,7 +3,7 @@ import ReactPlayer from 'react-player/youtube';
 import '../componetStyles/Pop_player.css';
 
 const Pop_player = (props)=>{
-  console.log(props.v_url);
+  // console.log(props.v_url);
   let video_url = `https://www.youtube.com/watch?v=${props.v_url}`;
   let x = true;
   if(x == true){

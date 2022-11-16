@@ -11,7 +11,7 @@ const MoviePoster = (props) =>{
    function urlEnc(name) {
     name = name.replaceAll(":", "%3A");
     name = name.replaceAll(" ", "%20");
-    return name + "trailer";
+    return name + "%20trailer";
    }
 
 //    console.log(urlEnc("Black panther: Wakanda forever"));

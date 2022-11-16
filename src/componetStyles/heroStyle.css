@@ -94,7 +94,9 @@
 .genre-title{
     z-index: 99999;
     display: none;
+    padding-inline: 10px;
     font-size: 0.8rem;
+    background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.678), transparent);
 }
 
 

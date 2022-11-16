@@ -8,7 +8,13 @@ const Hero = (props) => {
   let [genre_title, setGenre_title] = useState([]);
   let gn_set = new Set();
 
+  const [isPOP, setISPOP] = useState(false);
 
+  const video_trailer_pop = ()=>{
+    // console.log(props.mt)
+    setISPOP(true);
+    console.log(props);
+}
 
   let bg_style = {
     backgroundImage: `url(${props.url_path})`,
@@ -50,6 +56,7 @@ gn_arr.map(ittem =>{
 s = s.substring(4, s.length);
 
   return (
+    <>
     <div className="Hero" style={bg_style}>
       <div className="Hero-overlay"></div>
       <h1 className="Movie-title mvt">{props.movie_title}</h1>
@@ -57,9 +64,11 @@ s = s.substring(4, s.length);
       <div className="genre-title">{s}</div>
       <div className="btn-container mvb">
         <button className="Play-btn">Play Now</button>
-        <button className="Info-btn" onClick={() => console.log(<Pop_player />)}>More Info</button>
+        <button className="Info-btn" onClick={() => video_trailer_pop()}>More Info</button>
       </div>
     </div>
+    {isPOP ? <Pop_player v_url=""/> : ""} 
+   </>
   );
 }
 

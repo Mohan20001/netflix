@@ -72,7 +72,7 @@ return(
       <Row title="Top Rated Movies" url={url_6}></Row>
       <Row title="Upcoming Movies" url={url_7}></Row>
     </div>
-    {/* <Pop_player /> */}
+    
     </div>
 )
 }

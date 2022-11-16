@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactPlayer from 'react-player/youtube';
 import '../componetStyles/Pop_player.css';
 
-const Pop_player = ()=>{
+const Pop_player = (props)=>{
+  console.log(props.v_url);
+  let video_url = `https://www.youtube.com/watch?v=${props.v_url}`;
+  let x = true;
+  if(x == true){
     return(
-        <div className="preview-container">
+      <div className="preview-container">
           <div className="pop-player">
             <div className="video-wrapper">
-               <ReactPlayer className="pop-video" url='https://www.youtube.com/watch?v=RfiKg_Sfg-o' width="100%" height="100%" loop={false} />
+               <ReactPlayer className="pop-video" url={video_url} width="100%" height="100%" loop={false} autoPlay={true}/>
+               <span className="close-btn-top" onClick={()=> x = false}>EXITE</span>
             </div>
             <div>
 
@@ -15,6 +20,7 @@ const Pop_player = ()=>{
           </div>
         </div>
     );
+  }
 }
 
 export default Pop_player;

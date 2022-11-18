@@ -7,7 +7,7 @@ const Hero = (props) => {
 
   let [genre_title, setGenre_title] = useState([]);
   let gn_set = new Set();
-  
+
   let [vid, setVid] = useState("");
   const [isPOP, setISPOP] = useState(false);
   const KEY = "AIzaSyC0xCBX2kC5xVdsCBE9diQsczTduWTC4Z4";
@@ -93,7 +93,7 @@ s = s.substring(4, s.length);
            }>More Info</button>
       </div>
     </div>
-    {isPOP ? <Pop_player v_url={vid}/> : ""} 
+    {isPOP ? <Pop_player vdata={props.hdata} v_url={vid}/> : ""} 
    </>
   );
 }

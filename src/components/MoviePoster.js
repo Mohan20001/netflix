@@ -50,7 +50,7 @@ const MoviePoster = (props) =>{
            }
         } className="w-100 poster-image"></img>
         </div>
-           {isPOP ? <Pop_player v_url={vid}/> : ""} 
+           {isPOP ? <Pop_player vdata={props.data} v_url={vid}/> : ""} 
         </>
     );
 }

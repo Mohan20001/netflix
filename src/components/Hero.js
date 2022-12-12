@@ -75,6 +75,12 @@ gn_arr.map(ittem =>{
 })
 s = s.substring(4, s.length);
 
+let popChild = (data) =>{
+  setISPOP(data)
+  console.log(data)
+}
+
+
   return (
     <>
     <div className="Hero" style={bg_style}>
@@ -93,7 +99,7 @@ s = s.substring(4, s.length);
            }>More Info</button>
       </div>
     </div>
-    {isPOP ? <Pop_player vdata={props.hdata} v_url={vid}/> : ""} 
+    {isPOP ? <Pop_player onClick={popChild} vdata={props.hdata} v_url={vid}/> : ""} 
    </>
   );
 }

@@ -54,7 +54,10 @@ const Pop_player = (props)=>{
           <div className="pop-player">
             <div className="video-wrapper">
                <ReactPlayer className="pop-video" url={video_url} width="100%" height="100%" loop={false} autoPlay={true}/>
-               <span className="close-btn-top" onClick={()=> setY(false)}>EXITE</span>
+               <span className="close-btn-top" onClick={()=>{
+                       setY(false)
+                       props.onClick(false)
+               }}>EXITE</span>
             </div>
             <div className="video-descrption">
                  <div className="m-dc">

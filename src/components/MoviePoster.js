@@ -14,6 +14,11 @@ const MoviePoster = (props) =>{
     return name + "%20trailer";
    }
 
+let popChild = (data) =>{
+    setISPOP(data)
+    console.log(data)
+}
+
 //    console.log(urlEnc("Black panther: Wakanda forever"));
     
   async function fetchYoutubeData(query) {
@@ -35,7 +40,7 @@ const MoviePoster = (props) =>{
 
     const video_trailer_pop = ()=>{
         // console.log(props.mt)
-        setISPOP(true);
+        // setISPOP(true);
         console.log(isPOP);
         console.log(props.data);
         // document.getElementById('appId').append(<Pop_player/>)
@@ -47,10 +52,15 @@ const MoviePoster = (props) =>{
            <img src={props.poster} onClick={async () => {
             fetchYoutubeData(props.data.name || props.data.title);
                video_trailer_pop();
+               if(isPOP === false){
+                setISPOP(true)
+               }else{
+                setISPOP(false)
+               }
            }
         } className="w-100 poster-image"></img>
         </div>
-           {isPOP ? <Pop_player vdata={props.data} v_url={vid}/> : ""} 
+           {isPOP ? <Pop_player onClick={popChild} vdata={props.data} v_url={vid}/> : ""} 
         </>
     );
 }

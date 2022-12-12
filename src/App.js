@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Row from './components/Row';
 import Hero from './components/Hero';
 import Pop_player from './components/Pop_player';
+import NavBar from './components/NavBar';
 
 function App() {
 
@@ -62,6 +63,7 @@ return(
     //  row componet   
     // 3a14c7390230b3a5a2dba32ee4278cb2
     <div id='appId'>
+     <NavBar/>
     <Hero hdata={_post} movie_overview={_post.overview} movie_title={_post.title} url_path={bg_img} genre_arr={_post.genre_ids} />
     <div className="Content-section">
       <Row title="Popular TV Shows" url={url_1}></Row>

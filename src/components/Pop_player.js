@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import ReactPlayer from 'react-player/youtube';
 import '../componetStyles/Pop_player.css';
+import { FaAngleLeft } from "react-icons/fa";
+
 
 const Pop_player = (props)=>{
   let [genre_title, setGenre_title] = useState([]);
@@ -57,7 +59,7 @@ const Pop_player = (props)=>{
                <span className="close-btn-top" onClick={()=>{
                        setY(false)
                        props.onClick(false)
-               }}>EXITE</span>
+               }}> <FaAngleLeft className="ex"/>EXIT</span>
             </div>
             <div className="video-descrption">
                  <div className="m-dc">

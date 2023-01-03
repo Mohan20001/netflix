@@ -1,5 +1,5 @@
 # Diployed link:
-https://animated-daifuku-88c142.netlify.app/
+https://clinquant-lily-e879e1.netlify.app
 
 # Getting Started with Create React App
 
